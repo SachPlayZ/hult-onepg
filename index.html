@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charmè</title>
+<link rel="shortcut icon" href="Logo-removebg-preview.png" type="image/png">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000; /* black background */
+        display: flex;
+        justify-content: center; /* horizontally center content */
+        align-items: center; /* vertically center content */
+        height: 100vh; /* make the body full height of the viewport */
+    }
+
+    .video-container {
+        position: relative;
+        width: 50%;
+        max-width: 562px; /* 9:16 aspect ratio (height will be calculated automatically) */
+        display: block; /* Initially set to block */
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio */
+    }
+
+    .pdf-container {
+        display: none;
+        height: 100vh;
+        width: 34vw;
+    }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+    <video controls autoplay id="myVideo">
+        <source src="FASHFINALW.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="pdf-container" id="pdfContainer">
+    <!-- Insert your PDF content here -->
+    <embed src="Environmental_One-Page_Impact_Report_Charity_Report_in_Light_Green_Pastel_Yellow_Black_Corporate_Clean_Style.pdf" type="application/pdf" width="100%" height="100%">
+</div>
+
+<script>
+    var video = document.getElementById('myVideo');
+    var pdfContainer = document.getElementById('pdfContainer');
+    var videoContainer = document.querySelector('.video-container');
+
+    video.onended = function() {
+        pdfContainer.style.display = 'block'; // Show PDF container
+        videoContainer.style.display = 'none'; // Hide video container
+    };
+</script>
+
+</body>
+</html>
