@@ -31,8 +31,16 @@
 
     .pdf-container {
         display: none;
-        height: 100vh;
+        height: auto;
         width: 34vw;
+    }
+    @media (max-width: 768px) {
+        .video-container {
+            width: 100vw;
+        }
+        .pdf-container {
+            width: 100vw;
+        }
     }
 </style>
 </head>
