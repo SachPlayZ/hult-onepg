@@ -18,7 +18,7 @@
 
     .video-container {
         position: relative;
-        width: 50%;
+        width: 100vw;
         max-width: 562px; /* 9:16 aspect ratio (height will be calculated automatically) */
         display: block; /* Initially set to block */
     }
@@ -32,14 +32,14 @@
     .pdf-container {
         display: none;
         height: auto;
-        width: 34vw;
+        width: 100vw;
     }
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
         .video-container {
-            width: 100vw;
+            width: 50%;
         }
         .pdf-container {
-            width: 100vw;
+            width: 34vw;
         }
     }
 </style>
